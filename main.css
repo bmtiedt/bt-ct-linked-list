@@ -1,0 +1,37 @@
+/* darkBackground #455A64
+lightBackground #CFD8DC
+fontValue #FFFFFF
+buttonColor #FFC107
+buttonOnHover #FFD773
+cardBorder #607D8B
+cardtextMain #455A64
+cardUrl #607D8B
+card underline #F2F4F4
+cardBackrgound #CFD8DC */
+/* ON-HOVER
+cardUrl #455A64
+cardUnderline #FFC107 */
+/* WHEN :read-only
+??? #F2F4F4
+cardUnderline #CFD8DC
+read #F05A28 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+  
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
