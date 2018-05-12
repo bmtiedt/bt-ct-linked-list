@@ -1,8 +1,8 @@
-var inputTitle = document.querySelector('.inputTitle');
-var inputUrl = document.querySelector('.inputUrl');
-var makeBookmarkButton = document.querySelector('.makeBookmarkButton');
-var bookmarkSection = document.querySelector('.bookmarkSection');
-var inputsForm = document.querySelector('.inputsForm');
+var inputTitle = document.querySelector('#website-title');
+var inputUrl = document.querySelector('#website-url');
+var makeBookmarkButton = document.querySelector('.make-bookmark-button');
+var bookmarkSection = document.querySelector('.bookmark-section');
+var inputsForm = document.querySelector('.inputs-form');
 
 inputsForm.addEventListener('submit', function(event) {
   event.preventDefault();
