@@ -5,16 +5,15 @@
 Now it’s time to try your hand at building a small application.
 
 In it’s simplest form, the application should have the following:
-
-**Two input fields**
-* [x] One for the title of the bookmark
-* [x] One for the URL that the bookmark should link to
+[x] Two input fields
+*  One for the title of the bookmark
+*  One for the URL that the bookmark should link to
 * [x] One button for creating the bookmark and adding it to the page
 * [x] A section for all of the created bookmarks; each bookmark should display:
-* [] The title of the bookmark
-* [] The URL of the bookmark (this should be clickable and link to the URL)
-* [] A button to “Mark as Read”
-* [] A button to “Remove” the bookmark
+* [x] The title of the bookmark
+* [x] The URL of the bookmark (this should be clickable and link to the URL)
+* [x] A button to “Mark as Read”
+* [x] A button to “Remove” the bookmark
 ## Phase One
 * [] The user should be able to input a title and URL into the appropriate fields
 * [] When the user clicks on the button for creating the bookmark, it should be added to the bookmarks section
