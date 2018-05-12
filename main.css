@@ -33,5 +33,41 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.title-inputs {
+  color: #FFF;
+  font-size: 5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+img.link-img {
+  width: 7rem;
+}
+
+.inputs-form {
+  background-color: #455A64;
+  height: 100%;
+}
+
+.inputs-button-wrapper {
+  background-color: #455A64;
+  height: -webkit-fill-available;
+  padding-top: 25%;
+  width: 50%;
+}
+
+.inputs {
+  font-size: 1.5rem;
+  width: 37rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.enter-button {
+  background-color: #FFC107;
+  color: #fff;
+  font-weight: 800;
 }
