@@ -7,8 +7,8 @@ Now it’s time to try your hand at building a small application.
 In it’s simplest form, the application should have the following:
 
 **Two input fields**
-[x] One for the title of the bookmark
-[x] One for the URL that the bookmark should link to
+*[x] One for the title of the bookmark
+*[x] One for the URL that the bookmark should link to
 [x] One button for creating the bookmark and adding it to the page
 [x] A section for all of the created bookmarks; each bookmark should display:
 [] The title of the bookmark
