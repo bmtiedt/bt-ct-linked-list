@@ -9,20 +9,27 @@
 <body>
   <main class="full-wrapper">
     <section class="inputs-button-wrapper">
+      <header role="banner" class="banner">
+        <h1 class="title-inputs">Linked
+          <img src="linked-list-logo.svg" class="link-img" alt="Linked List icon"></span>List
+        </h1>
+      </header>
       <form class="inputs-form">
-        <h1 class="title-inputs">Linked <img src="linked-list-logo.svg" class="link-img" alt="Linked List icon"> List</h1>
+        <label for="website title"></label>
         <input type="text" name="Website Title" class="inputs" id="website-title" placeholder="Website Title">
         <br />
         <br />
         <br />
         <input type="text" name="Website URL" class="inputs" id="website-url" placeholder="Website URL">
         <br />
-        <button class="enter-button" disabled>Submit</button>
+        <button class="make-bookmark-button" disabled>Submit</button>
       </form>
     </section>
-    <section class="bookmark-section">
-      
+    <section class="bookmark-section" id="bookmark-section-id">
     </section>
+    <aside class="clear-all-container">
+      <button class="clear-all-container-button" id="clear-button">Clear</button>
+    </aside>
   </main>
 
 <script src="main.js"></script>
