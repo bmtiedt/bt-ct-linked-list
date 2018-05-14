@@ -36,31 +36,69 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h2.bookmark-banner-element {
-  border: 1px solid red;
+section.inputs-button-wrapper {
+  background-color: #455A64;
+  display: inline-block;
+  width: 49%;
+  text-align: center;
 }
 
+h1.title-inputs {
+  color: #FFF;
+  font-size: 3rem;
+}
+
+.link-img {
+  width: 5rem;
+}
+
+.inputs {
+  width: 23rem;
+}
+
+button.make-bookmark-button {
+  background-color: #FFC107;
+  color: #FFF;
+  width: 23rem;
+}
+
+button.make-bookmark-button:hover {
+  background-color: #FFD773;
+  color: #FFF;
+}
+
+section.bookmark-section {
+  background-color: #CFD8DC;
+  display: inline-block;
+  width: 50%;
+  border: 1px solid #607D8B;
+}
+
+h2.bookmark-banner-element {
+/*  border: 2px solid #607D8B;
+*/}
+
 article.bookmark-list-item {
-  border: 1px solid blue;
+  color: #607D8B;
 }
 
 header.bookmark-list-banner {
-  border: 3px solid green;
-}
+/*  border: 3px solid;
+*/}
 
 span.bookmark-list-link {
-  border: 2px solid magenta;
+  color: #607D8B;
 }
 
 a.bookmark-list-link-item {
-  border: 4px solid chartreuse;
-}
+/*  border: 4px solid chartreuse;
+*/}
 
 nav.bookmark-list-buttons {
-  border: 2px solid lightblue;
-}
+/*  border: 2px solid lightblue;
+*/}
 
 button.bookmark-list-button {
-  border: 1px solid orange;
-}
+/*  border: 1px solid orange;
+*/}
 
