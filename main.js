@@ -61,7 +61,9 @@
 
 function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   // console.log(bookmarkItemTitle);
-  bookmarkList.append(`<article class="bookmark-list-banner">
+  var bookMarks = document.createElement('article');
+  bookMarks.innerHTML = (`
+    <article class="bookmark-list-item">
       <header class="bookmark-list-banner">
         <h2 class="bookmark-banner-element">${bookmarkItemTitle}</h2>
       </header>
@@ -69,10 +71,13 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
         <a class="bookmark-list-link-item">${bookmarkItemUrl}</a>
       </span>
       <nav class="bookmark-list-buttons">
-        <button class="bookmark-list-button">"read"</button>
-        <button class="bookmark-list-button">"delete"</button>
+        <button class="bookmark-list-button">read</button>
+        <button class="bookmark-list-button">delete</button>
       </nav>
-    </article>`)
+    </article>
+    `)
+  bookmarkList.append(bookMarks);
+  console.log('B5')
 };
 
 
