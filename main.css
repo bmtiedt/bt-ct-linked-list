@@ -54,6 +54,10 @@ header {
   margin-bottom: 3rem;
 }
 
+article {
+  border: 1px solid red;
+}
+
 .title-inputs {
   color: #FFF;
   font-size: 7rem;
@@ -91,7 +95,7 @@ h1.image {
   color: #FFF;
 }
 
-  section.bookmark-section {
+.bookmark-section {
   background-color: #CFD8DC;
   display: inline-block;
   width: 50%;
