@@ -36,30 +36,53 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+main.full-wrapper {
+  display: flex;
+}
+
 section.inputs-button-wrapper {
   background-color: #455A64;
-  display: inline-block;
-  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
   text-align: center;
+  height: 100vh;
+}
+
+header {
+  margin-bottom: 3rem;
 }
 
 h1.title-inputs {
   color: #FFF;
-  font-size: 3rem;
+  font-size: 7rem;
 }
 
 .link-img {
   width: 5rem;
+  height: 5rem;
+}
+
+h1.image {
+  height: 5rem;
 }
 
 .inputs {
-  width: 23rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 5rem;
+  height: 4.5rem;
+  width: 77%;
 }
 
 button.make-bookmark-button {
   background-color: #FFC107;
   color: #FFF;
-  width: 23rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  height: 4.5rem;
+  width: 77%;
 }
 
 button.make-bookmark-button:hover {
@@ -72,6 +95,8 @@ section.bookmark-section {
   display: inline-block;
   width: 50%;
   border: 1px solid #607D8B;
+  overflow: scroll;
+  height: 100vh;
 }
 
 h2.bookmark-banner-element {
