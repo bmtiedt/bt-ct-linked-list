@@ -36,38 +36,31 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.title-inputs {
-  color: #FFF;
-  font-size: 5rem;
-  font-weight: 800;
-  text-align: center;
+h2.bookmark-banner-element {
+  border: 1px solid red;
 }
 
-img.link-img {
-  width: 7rem;
+article.bookmark-list-item {
+  border: 1px solid blue;
 }
 
-.inputs-form {
-  background-color: #455A64;
-  height: 100%;
+header.bookmark-list-banner {
+  border: 3px solid green;
 }
 
-.inputs-button-wrapper {
-  background-color: #455A64;
-  height: -webkit-fill-available;
-  padding-top: 25%;
-  width: 50%;
+span.bookmark-list-link {
+  border: 2px solid magenta;
 }
 
-.inputs {
-  font-size: 1.5rem;
-  width: 37rem;
-  display: inline-flex;
-  justify-content: center;
+a.bookmark-list-link-item {
+  border: 4px solid chartreuse;
 }
 
-.enter-button {
-  background-color: #FFC107;
-  color: #fff;
-  font-weight: 800;
+nav.bookmark-list-buttons {
+  border: 2px solid lightblue;
 }
+
+button.bookmark-list-button {
+  border: 1px solid orange;
+}
+

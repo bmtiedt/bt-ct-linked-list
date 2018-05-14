@@ -3,66 +3,73 @@
   var inputUrl = document.querySelector('#website-url');
   var makeBookmarkButton = document.querySelector('.make-bookmark-button');
   var inputsForm = document.querySelector('.inputs-form');
-  var clearButton = document.querySelector('#clear-button');
+  // var clearButton = document.querySelector('#clear-button');
   var bookmarkSection = document.querySelector('#bookmark-section-id');
 
-  clearButton = addEventListener('click', clearAllBookmarks);
+  // clearButton.addEventListener('click', clearAllBookmarks);
+  inputTitle.addEventListener('keyup', toggleButton);
+  inputUrl.addEventListener('keyup', toggleButton);
 
   inputsForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-  handleFormSubmit();  
+    event.preventDefault();
+    handleFormSubmit();  
   });
-
-  inputTitle.addEventListener('keyup', function() {
-    makeBookmarkButton.removeAttribute('disabled', '');
-  });
-
-  inputUrl.addEventListener('keyup', function() {
-    makeBookmarkButton.removeAttribute('disabled', '');
-  });
+  
+  function toggleButton () {
+    if ((inputTitle.value === '') || (inputUrl.value === '')) {
+      makeBookmarkButton.disabled = true;
+    } else {
+      makeBookmarkButton.disabled = false;
+    }
+  }
 
   bookmarkSection.addEventListener('click', function (event) { 
-    console.log('A')   
+    console.log('A')
     if(event.target.innerText.toLowerCase() === 'read') {
       toggleReadClass(event.target);
     }
     if(event.target.innerText.toLowerCase() === 'delete') {
       deleteListItem(event.target);
+    console.log('A')
+
     }
   });
 
-
-
   function clearInputs(element) {
-    return element.value = '';
+    element.value = '';
+    console.log('a');
   }
 
   function disableButton(element) {
-    return element.setAttribute('disabled', 'disabled');
+    element.setAttribute('disabled', 'disabled');
+    console.log('b')
   }
 
   function handleFormSubmit() {
     var title = inputTitle.value;
     var url = inputUrl.value;
-    console.log('B');
-    if (title.length > 0 && url.lrngth > 0) {    
+    if (title.length > 0 && url.length > 0) {    
       makeBookmarkItem(title, url);
-      clearInputs(inputForm);
+      clearInputs(inputTitle);
       clearInputs(inputUrl);
-      disableButton(bookmarkButton);
+      disableButton(makeBookmarkButton);
+      console.log('a1');
     }
   }
+
+
 
   function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
     var bookmarkList = document.querySelector('#bookmark-section-id');
     var bookmarkItem = document.createElement('article');
-    var banner = document.createElement('.banner');
+    var banner = document.createElement('header');
     var bannerElement = document.createElement('h2');
     var bookmarkWrapper = document.createElement('span');
     var bookmarkLink = document.createElement('a');
     var nav = document.createElement('nav');
     var readButton = document.createElement('button');
     var deleteButton = document.createElement('button');
+
 
     bookmarkItem.className = 'bookmark-list-item';
     banner.className = 'bookmark-list-banner';
@@ -74,26 +81,29 @@
     deleteButton.className = 'bookmark-list-button';
 
     bannerElement.innerText = bookmarkItemTitle;
-
     bookmarkLink.innerText = bookmarkItemUrl;
-    bookmarkList.setAttribute('herf', bookmarkItemUrl);
+
+    bookmarkList.setAttribute('href', bookmarkItemUrl);
     bookmarkList.setAttribute('target', '_blank');
 
-    readButton.innerText = 'Read';
+    readButton.innerText = 'read';
     deleteButton.innerText = 'delete';
 
     bookmarkList.appendChild(bookmarkItem);
     bookmarkItem.appendChild(banner);
     banner.appendChild(bannerElement);
 
+
     bookmarkItem.appendChild(bookmarkWrapper);
     bookmarkWrapper.appendChild(bookmarkLink);
 
-    boookmarkItem.appendChild(nav);
+
+    bookmarkItem.appendChild(nav);
     nav.appendChild(readButton);
     nav.appendChild(deleteButton);
 
     clearButton.style.display = 'block';
+
   }
 
 
@@ -107,6 +117,8 @@
       }
     }
   }
+      
+
 
   function deleteBookmark(element) {
     var childElement = element;
@@ -127,8 +139,9 @@
   // clearButton.style.display = 'none';
 }
 
+
 function setInnerText(element, string) {
-  return element.innerText = string;
+  element.innerText = string;
 }
 })();
 
