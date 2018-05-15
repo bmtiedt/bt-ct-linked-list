@@ -36,11 +36,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-main.full-wrapper {
+.full-wrapper {
   display: flex;
 }
 
-section.inputs-button-wrapper {
+.inputs-button-wrapper {
   background-color: #455A64;
   display: flex;
   flex-direction: column;
@@ -54,21 +54,13 @@ header {
   margin-bottom: 3rem;
 }
 
-article {
-  border: 1px solid red;
-}
-
 .title-inputs {
   color: #FFF;
-  font-size: 7rem;
+  font-size: 6.5rem;
 }
 
 .link-img {
-  width: 5rem;
-  height: 5rem;
-}
-
-h1.image {
+  width: 9rem;
   height: 5rem;
 }
 
@@ -83,7 +75,6 @@ h1.image {
 .make-bookmark-button {
   background-color: #FFC107;
   color: #FFF;
-
   font-size: 2.5rem;
   font-weight: 800;
   height: 4.5rem;
@@ -105,11 +96,18 @@ h1.image {
 }
 
 .bookmark-banner-element {
-/*  border: 2px solid #607D8B;
-*/}
+  color: #455A64;
+  padding-left: 1rem;
+  padding-top: .5rem;
+}
 
 .bookmark-list-item {
+  background-color: #FFF;
+  border: 1px solid #607D8B;
   color: #607D8B;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
 }
 
 .bookmark-list-banner {
@@ -118,17 +116,30 @@ h1.image {
 
 .bookmark-list-link {
   color: #607D8B;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+}
+
+.bookmark-list-link: hover {
+  color: #455A64;
+  text-decoration: underline #FFC107;
 }
 
 .bookmark-list-link-item {
-/*  border: 4px solid chartreuse;
-*/}
+  text-decoration: underline;
+}
 
 .bookmark-list-buttons {
-/*  border: 2px solid lightblue;
-*/}
+  display: flex;
+  justify-content: space-between;
+}
 
 .bookmark-list-button {
-/*  border: 1px solid orange;
+  background: none;
+  border: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: underline #455A64;
+/*  border: 2px solid lightblue;
 */}
 

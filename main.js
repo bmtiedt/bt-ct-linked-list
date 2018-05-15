@@ -81,6 +81,5 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   bookmarkList.append(bookMarks);
 }
 
-
   
 
