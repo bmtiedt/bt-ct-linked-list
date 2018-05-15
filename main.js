@@ -2,21 +2,23 @@
   var inputUrl = document.querySelector('#website-url');
   var makeBookmarkButton = document.querySelector('.make-bookmark-button');
   var inputsForm = document.querySelector('.inputs-form');
-  // var clearButton = document.querySelector('#clear-button');
   var bookmarkList = document.querySelector('#bookmark-section-id');
+  var bookmarkWrapper = document.querySelector('.bookmark-section');
 
-
+  // var clearButton = document.querySelector('#clear-button');
   // clearButton.addEventListener('click', clearAllBookmarks);
   inputTitle.addEventListener('keyup', toggleButton);
   inputUrl.addEventListener('keyup', toggleButton);
-  
-  // makeBookmarkButton.addEventListener('click', handleFormSubmit);
-  
+
   inputsForm.addEventListener('submit', function(event) {
     event.preventDefault();
     handleFormSubmit();  
   });
-  
+
+  $('.bookmark-section').on('click','.bookmark-list-item', function() {
+    $(this).toggleClass('read');
+  });
+
   function toggleButton () {
     if ((inputTitle.value === '') || (inputUrl.value === '')) {
       makeBookmarkButton.disabled = true;
@@ -24,17 +26,6 @@
       makeBookmarkButton.disabled = false;
     }
   }
-
-  // bookmarkSection.addEventListener('click', function (event) { 
-  //   console.log('A')
-  //   if(event.target.innerText.toLowerCase() === 'read') {
-  //     toggleReadClass(event.target);
-  //   }
-  //   if(event.target.innerText.toLowerCase() === 'delete') {
-  //     deleteListItem(event.target);
-  //   console.log('A')
-  //   }
-  // });
 
   function clearInputs(element) {
     element.value = '';
@@ -79,6 +70,35 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   bookmarkList.append(bookMarks);
   console.log('B5')
 };
+
+
+
+// function toggleReadClass(button) {
+//   var readBtnClass = document.createClass('.read')
+
+
+  // makeBookmarkButton.addEventListener('click', handleFormSubmit);
+
+  // bookmarkSection.addEventListener('click', function (event) { 
+  //   console.log('A')
+  //   if(event.target.innerText.toLowerCase() === 'read') {
+  //     toggleReadClass(event.target);
+  //   }
+  //   if(event.target.innerText.toLowerCase() === 'delete') {
+  //     deleteListItem(event.target);
+  //   console.log('A')
+  //   }
+  // });
+
+
+
+
+
+
+
+
+
+
 
 
     // var bookmarkItem = document.createElement('article');
