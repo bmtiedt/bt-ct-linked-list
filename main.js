@@ -5,7 +5,6 @@
 
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
-  // var deleteButton = document.querySelector('#delete-button-id');
 
 
   inputTitle.addEventListener('keyup', toggleButton);
@@ -26,10 +25,13 @@
 
   function readBookmark(element) {
     var article = element.parentNode.parentNode;
-    article.classList.add('read-button');
-    console.log(article);
+    if (article.classList.contains('read-button')) {
+      article.classList.remove('read-button');
+    } else {
+    article.classList.add('read-button');      
+    }
   }
-
+  
   function deleteBookmark(element) {
     console.log(element.parentNode.parentNode);
     var article = element.parentNode.parentNode;
