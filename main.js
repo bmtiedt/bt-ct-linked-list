@@ -31,7 +31,7 @@
       article.classList.add('read-button');
     }
   }
-
+  
   function deleteBookmark(element) {
     console.log(element.parentNode.parentNode);
     var article = element.parentNode.parentNode;
