@@ -28,7 +28,7 @@
     if (article.classList.contains('read-button')) {
       article.classList.remove('read-button');
     } else {
-    article.classList.add('read-button');      
+      article.classList.add('read-button');
     }
   }
   
@@ -72,7 +72,7 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
         <h2 class="bookmark-banner-element">${bookmarkItemTitle}</h2>
       </header>
       <span class="bookmark-list-link">
-        <a class="bookmark-list-link-item">${bookmarkItemUrl}</a>
+        <a href="${bookmarkItemUrl}" class="bookmark-list-link-item">${bookmarkItemUrl}</a>
       </span>
       <nav class="bookmark-list-buttons">
         <button class="bookmark-list-button read-button">Read</button>
