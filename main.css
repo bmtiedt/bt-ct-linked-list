@@ -24,10 +24,11 @@ html {
 
 ul {
   display: inline-flex;
-  list-style: none;
   color: #CFD8DC;
   line-height: 3rem;
+  list-style: none;
 }
+
 
 .bookmark-banner-element {
   color: #455A64;
@@ -47,12 +48,9 @@ ul {
   margin: 1.5rem;
 }
 
-.bookmark-list-banner {
-/*  border: 3px solid;
-*/}
-
 .bookmark-list-link {
   color: #607D8B;
+  border-bottom: 1px solid #CFD8DC;
   font-size: medium;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -177,8 +175,8 @@ ul {
 
 .read .read-button {
   color: #F05A28;
-  text-decoration: none;
   font-weight: 800;
+  text-decoration: none;
 }
 
 .title-inputs {
@@ -201,6 +199,7 @@ ul {
     width: 100%;
   }
   .link-img {
+
     width: 10%;
   }
   .title-inputs {
