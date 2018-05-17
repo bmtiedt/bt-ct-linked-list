@@ -82,6 +82,10 @@ a {
   width: 77%;
 }
 
+.inputs:invalid {
+  border: 2px dashed red;
+}
+
 .make-bookmark-button {
   border: none;
   background-color: #FFC107;

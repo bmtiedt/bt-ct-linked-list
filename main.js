@@ -1,8 +1,11 @@
   var inputTitle = document.querySelector('#website-title');
   var inputUrl = document.querySelector('#website-url');
-  var makeBookmarkButton = document.querySelector('.make-bookmark-button');
   var inputsForm = document.querySelector('.inputs-form');
-
+  var makeBookmarkButton = document.querySelector('.make-bookmark-button');
+  var mainButtonSection = document.querySelector('.main-button-section');
+  var bookmarkMadeCount = document.querySelector('.bookmark-made-counter');
+  var bookmarkReadCount = document.querySelector('.bookmark-read-counter');
+  var bookmarkUnreadCount = document.querySelector('.bookmark-unread-counter');
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
 
@@ -12,28 +15,53 @@
   
   inputsForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    handleFormSubmit();  
+    handleFormSubmit();
+    totalBookmarks();
+    clearReadBookmarks();
   });
   
   bookmarkList.addEventListener('click', function(event) {
     if(event.target.classList.contains('delete-button')){
       deleteBookmark(event.target);
+      totalBookmarks();
     } else if (event.target.classList.contains('read-button')) {
-      readBookmark(event.target);
+     readBookmark(event.target);
+     totalBookmarks();
     }
-  });
+  })
+
+  // mainButtonSection.addEventListener('click', function(event) {
+  //   if(event.target.classList.contains('main-button-section')) {
+  //     clearAllReadBookmarks();
+  //   }
+  // }
+
+  // function clearAllReadBookmarks() {
+    
+  // }
+
+  function totalBookmarks() {
+    notReadCount = document.querySelectorAll('.not-read').length;
+    readCount = document.querySelectorAll('.read').length;
+    console.log(notReadCount);
+    console.log(readCount);
+    bookmarkMadeCount.innerText = 'Bookmark Count: ' + (notReadCount + readCount);
+    bookmarkReadCount.innerText = 'Read Count: ' + readCount;
+    bookmarkUnreadCount.innerText = 'Unread Count: ' + notReadCount;
+  }
 
   function readBookmark(element) {
     var article = element.parentNode.parentNode;
-    if (article.classList.contains('page-read')) {
-      article.classList.remove('page-read');
+    if (article.classList.contains('read')) {
+      article.classList.remove('read');
+      article.classList.add('not-read');
     } else {
-      article.classList.add('page-read');
+      article.classList.add('read');
+      article.classList.remove('not-read');
     }
   }
   
   function deleteBookmark(element) {
-    console.log(element.parentNode.parentNode);
     var article = element.parentNode.parentNode;
     article.remove();
   }
@@ -65,10 +93,19 @@
       alert('Please fill in both fields!');
   };
 
+// function clearReadBookmarks(element) {
+//   var clearAllButton = document.createElement('article');
+//   clearAllButton.innerHTML = (`
+//     <article>
+//       <button class="clear-all-button">Clear All</button>
+//     </article>`); 
+//   mainButtonSection.append(clearAllButton);
+// }
+
 function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   var bookMarks = document.createElement('article');
   bookMarks.innerHTML = (`
-    <article class="bookmark-list-item" id="bookmark-article-id">
+    <article class="bookmark-list-item not-read" id="bookmark-article-id">
       <header class="bookmark-list-banner">
         <h2 class="bookmark-banner-element">${bookmarkItemTitle}</h2>
       </header>
