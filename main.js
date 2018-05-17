@@ -2,14 +2,14 @@
   var inputUrl = document.querySelector('#website-url');
   var inputsForm = document.querySelector('.inputs-form');
   var makeBookmarkButton = document.querySelector('.make-bookmark-button');
-  var mainButtonSection = document.querySelector('.main-button-section');
+  var clearButtonSection = document.querySelector('.clear-button-section');
   var bookmarkMadeCount = document.querySelector('.bookmark-made-counter');
   var bookmarkReadCount = document.querySelector('.bookmark-read-counter');
   var bookmarkUnreadCount = document.querySelector('.bookmark-unread-counter');
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
-
-
+  var i = 0;
+  
   inputTitle.addEventListener('keyup', toggleButton);
   inputUrl.addEventListener('keyup', toggleButton);
   
@@ -17,28 +17,44 @@
     event.preventDefault();
     handleFormSubmit();
     totalBookmarks();
-    clearReadBookmarks();
-  });
+    if (i === 0) {
+    readBookmarkBtn();
+  }});
   
   bookmarkList.addEventListener('click', function(event) {
     if(event.target.classList.contains('delete-button')){
       deleteBookmark(event.target);
       totalBookmarks();
     } else if (event.target.classList.contains('read-button')) {
-     readBookmark(event.target);
-     totalBookmarks();
+      readBookmark(event.target);
+      totalBookmarks();
     }
   })
 
-  // mainButtonSection.addEventListener('click', function(event) {
-  //   if(event.target.classList.contains('main-button-section')) {
-  //     clearAllReadBookmarks();
-  //   }
-  // }
+  clearButtonSection.addEventListener('click', function(event) {
+    if(event.target.classList.contains('clear-all-button')) {
+      clearAllReadBookmarks();
+      totalBookmarks();
+    }
+  });
 
-  // function clearAllReadBookmarks() {
-    
-  // }
+function readBookmarkBtn() {
+    var clearAllButton = document.createElement('article');
+    clearAllButton.innerHTML = (`
+    <article class="clearAllButtonArticle">
+      <button class="clear-all-button">Clear All</button>
+    </article>`);
+    clearButtonSection.append(clearAllButton);
+    ++i;
+} 
+
+function clearAllReadBookmarks() {
+  var clearAllButton = document.querySelector('.clear-all-button');
+  var readBookmarks = document.querySelectorAll('.read');
+    for (i = 0; i < readBookmarks.length; ++i) {
+      readBookmarks[i].remove();
+    }
+}
 
   function totalBookmarks() {
     notReadCount = document.querySelectorAll('.not-read').length;
@@ -92,15 +108,6 @@
     } else 
       alert('Please fill in both fields!');
   };
-
-// function clearReadBookmarks(element) {
-//   var clearAllButton = document.createElement('article');
-//   clearAllButton.innerHTML = (`
-//     <article>
-//       <button class="clear-all-button">Clear All</button>
-//     </article>`); 
-//   mainButtonSection.append(clearAllButton);
-// }
 
 function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   var bookMarks = document.createElement('article');
