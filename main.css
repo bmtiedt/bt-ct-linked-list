@@ -18,6 +18,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .full-wrapper:after {
   content: "";
   display: table;
@@ -60,19 +64,7 @@ body {
   border: 2px dashed red;
 }
 
-ul {
-  display: inline-flex;
-  color: #CFD8DC;
-  line-height: 3rem;
-  list-style: none;
-}
-
-.counter {
-  margin: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.clear-all-button {
+.make-bookmark-button {
   border: none;
   background-color: #FFC107;
   color: #FFF;
@@ -80,6 +72,23 @@ ul {
   font-weight: 800;
   height: 4.5rem;
   width: 77%;
+}
+
+.make-bookmark-button:hover {
+  background-color: #FFD773;
+  color: #FFF;
+}
+
+ul {
+  display: inline-flex;
+  list-style: none;
+  color: #CFD8DC;
+  line-height: 3rem;
+}
+
+.counter {
+  margin: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .bookmark-section {
@@ -99,10 +108,6 @@ ul {
   padding-bottom: .5rem;
 }
 
-a {
-  text-decoration: none;
-}
-
 .bookmark-list-item {
   background-color: #FFF;
   border: 1px solid #607D8B;
@@ -112,19 +117,13 @@ a {
   margin: 1.5rem;
 }
 
-.make-bookmark-button {
-  border: none;
-  background-color: #FFC107;
-  color: #FFF;
-  font-size: 2.5rem;
-  font-weight: 800;
-  height: 4.5rem;
-  width: 77%;
+.bookmark-list-link {
+  color: #607D8B;
+  font-size: medium;
+  margin-left: 1.5rem;
+  border-bottom: 1px solid #CFD8DC;
+  padding: 1.5rem 0;
 }
-
-.make-bookmark-button:hover {
-  background-color: #FFD773;
-  color: #FFF;
 
 .bookmark-list-link-item:hover {
   color: #455A64;
@@ -132,14 +131,6 @@ a {
   text-decoration: underline #FFC107;
 }
 
-.bookmark-list-link {
-  color: #607D8B;
-  font-size: medium;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  border-bottom: 1px solid #CFD8DC;
-  padding: 1.5rem 0;
-}
 .bookmark-list-link-item {
   color: #607D8B;
   font-size: large;
@@ -160,31 +151,24 @@ a {
   text-decoration: underline #F2F4F4;
 }
 
-.delete-button:hover {
-  text-decoration: underline #FFC107;
-}
-
-.read {
-  background-color: #F2F4F4;
-}
-
 .read-button:hover {
   color: #455A64;
   font-weight: 800;
   text-decoration: underline #FFC107;
 }
 
-.read a {
-  text-decoration: underline #CFD8DC;
+.delete-button:hover {
+  text-decoration: underline #FFC107;
 }
 
-.read .delete-button {
-    text-decoration: underline #CFD8DC;
+.page-read {
+  background-color: #F2F4F4;
 }
-.read .read-button {
+
+.page-read .read-button {
   color: #F05A28;
-  font-weight: 800;
   text-decoration: none;
+  font-weight: 800;
 }
 
 @media screen and (min-width: 1250px) {
@@ -202,11 +186,7 @@ a {
     width: 100%;
   }
   .link-img {
-
-    width: 10%;
-  }
-  .title-inputs {
+    width: 7%;
     padding-bottom: 1rem;
-    font-size: 7vw;
   }
 }
