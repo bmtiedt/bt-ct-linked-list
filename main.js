@@ -114,7 +114,7 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
       </span>
       <nav class="bookmark-list-buttons">
         <button class="bookmark-list-button read-button">Read</button>
-        <button class="bookmark-list-button delete-button" id="delete-button-id">Delete</button>
+        <button class="bookmark-list-button delete-button" id="delete-button-id" aria-pressed="false">Delete</button>
       </nav>
     </article>
     `);
