@@ -1,4 +1,4 @@
-  var inputTitle = document.querySelector('#website-title');
+var inputTitle = document.querySelector('#website-title');
   var inputUrl = document.querySelector('#website-url');
   var inputsForm = document.querySelector('.inputs-form');
   var makeBookmarkButton = document.querySelector('.make-bookmark-button');
@@ -9,7 +9,7 @@
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
   var i = 0;
-
+  
   inputTitle.addEventListener('keyup', toggleButton);
   inputUrl.addEventListener('keyup', toggleButton);
   
@@ -42,7 +42,7 @@ function readBookmarkBtn() {
     var clearAllButton = document.createElement('article');
     clearAllButton.innerHTML = (`
     <article class="clearAllButtonArticle">
-      <button class="clear-all-button">Clear All Read</button>
+      <button class="clear-all-button">Clear All</button>
     </article>`);
     clearButtonSection.append(clearAllButton);
     ++i;
@@ -121,12 +121,9 @@ function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
       </span>
       <nav class="bookmark-list-buttons">
         <button class="bookmark-list-button read-button">Read</button>
-        <button class="bookmark-list-button delete-button" id="delete-button-id" aria-pressed="false">Delete</button>
+        <button class="bookmark-list-button delete-button" id="delete-button-id">Delete</button>
       </nav>
     </article>
     `);
   bookmarkList.append(bookMarks);
 }
-
-  
-
