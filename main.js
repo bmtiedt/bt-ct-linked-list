@@ -25,10 +25,10 @@
 
   function readBookmark(element) {
     var article = element.parentNode.parentNode;
-    if (article.classList.contains('read-button')) {
-      article.classList.remove('read-button');
+    if (article.classList.contains('page-read')) {
+      article.classList.remove('page-read');
     } else {
-      article.classList.add('read-button');
+      article.classList.add('page-read');
     }
   }
 
@@ -40,10 +40,10 @@
   
   
   function toggleButton () {
-    if ((inputTitle.value === '') || (inputUrl.value === '')) {
-      makeBookmarkButton.disabled = true;
-    } else {
+    if ((inputTitle.value !== '') || (inputUrl.value !== '')) {
       makeBookmarkButton.disabled = false;
+    } else {
+      makeBookmarkButton.disabled = true;
     }
   }
 
@@ -61,8 +61,9 @@
       clearInputs(inputTitle);
       clearInputs(inputUrl);
       disableButton(makeBookmarkButton);
-    }
-  }
+    } else 
+      alert('Please fill in both fields!');
+  };
 
 function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   var bookMarks = document.createElement('article');
