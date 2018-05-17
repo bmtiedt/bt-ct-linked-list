@@ -9,7 +9,7 @@
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
   var i = 0;
-  
+
   inputTitle.addEventListener('keyup', toggleButton);
   inputUrl.addEventListener('keyup', toggleButton);
   
@@ -42,7 +42,7 @@ function readBookmarkBtn() {
     var clearAllButton = document.createElement('article');
     clearAllButton.innerHTML = (`
     <article class="clearAllButtonArticle">
-      <button class="clear-all-button">Clear All</button>
+      <button class="clear-all-button">Clear All Read</button>
     </article>`);
     clearButtonSection.append(clearAllButton);
     ++i;
