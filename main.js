@@ -2,8 +2,12 @@
   var inputUrl = document.querySelector('#website-url');
   var inputsForm = document.querySelector('.inputs-form');
   var makeBookmarkButton = document.querySelector('.make-bookmark-button');
-  var madeCount = 0;
+  // var madeCount = 0;
+  
+  // var readCount = 0;
   var bookmarkMadeCount = document.querySelector('.bookmark-made-counter');
+  var bookmarkReadCount = document.querySelector('.bookmark-read-counter');
+  var bookmarkUnreadCount = document.querySelector('.bookmark-unread-counter');
   var bookmarkList = document.querySelector('#bookmark-section-id');
   var bookmarkArticle = document.querySelector('#bookmark-article-id');
 
@@ -13,33 +17,42 @@
   
   inputsForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    handleFormSubmit();  
+    handleFormSubmit();
+    totalBookmarks();  
   });
   
   bookmarkList.addEventListener('click', function(event) {
     if(event.target.classList.contains('delete-button')){
       deleteBookmark(event.target);
+      totalBookmarks();
     } else if (event.target.classList.contains('read-button')) {
-      readBookmark(event.target);
+     readBookmark(event.target);
+     totalBookmarks();
     }
   })
 
-  makeBookmarkButton.onclick = function() {
-    madeCount++;
-    bookmarkMadeCount.innerText = 'Bookmark Count: ' + madeCount;
-  };
+  function totalBookmarks() {
+    notReadCount = document.querySelectorAll('.not-read').length;
+    readCount = document.querySelectorAll('.read').length;
+    console.log(notReadCount);
+    console.log(readCount);
+    bookmarkMadeCount.innerText = 'Bookmark Count: ' + (notReadCount + readCount);
+    bookmarkReadCount.innerText = 'Read Count: ' + readCount;
+    bookmarkUnreadCount.innerText = 'Unread Count: ' + notReadCount;
+  }
 
   function readBookmark(element) {
     var article = element.parentNode.parentNode;
-    if (article.classList.contains('read-button')) {
-      article.classList.remove('read-button');
+    if (article.classList.contains('read')) {
+      article.classList.remove('read');
+      article.classList.add('not-read');
     } else {
-      article.classList.add('read-button');
+      article.classList.add('read');
+      article.classList.remove('not-read');
     }
   }
   
   function deleteBookmark(element) {
-    console.log(element.parentNode.parentNode);
     var article = element.parentNode.parentNode;
     article.remove();
   }
@@ -73,7 +86,7 @@
 function makeBookmarkItem(bookmarkItemTitle, bookmarkItemUrl) {
   var bookMarks = document.createElement('article');
   bookMarks.innerHTML = (`
-    <article class="bookmark-list-item" id="bookmark-article-id">
+    <article class="bookmark-list-item not-read" id="bookmark-article-id">
       <header class="bookmark-list-banner">
         <h2 class="bookmark-banner-element">${bookmarkItemTitle}</h2>
       </header>
