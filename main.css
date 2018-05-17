@@ -9,74 +9,17 @@
   box-sizing: inherit;
 }
   
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+a {
+  text-decoration: none;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
-
-.full-wrapper:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.full-wrapper {
-  display: flex;
-  margin: 0 auto;
-}
-
-.inputs-button-wrapper {
-  background-color: #455A64;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  width: 50%;
-}
-
-.title-inputs {
-  color: #FFF;
-  font-size: 5vw;
-}
-
-.link-img {
-  width: 15%;
-}
-
-.inputs {
-  font-size: 2.5rem;
-  font-weight: 400;
-  height: 4.5rem;
-  margin-bottom: 5rem;
-  width: 77%;
-}
-
-.inputs:invalid {
-  border: 2px dashed red;
-}
-
-.make-bookmark-button {
-  border: none;
-  background-color: #FFC107;
-  color: #FFF;
-  font-size: 2.5rem;
-  font-weight: 800;
-  height: 4.5rem;
-  width: 77%;
-}
-
-.make-bookmark-button:hover {
-  background-color: #FFD773;
-  color: #FFF;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 ul {
@@ -86,19 +29,6 @@ ul {
   list-style: none;
 }
 
-.counter {
-  font-size: 1.5rem;
-  margin: 0.5rem;
-}
-
-.bookmark-section {
-  background-color: #CFD8DC;
-  border: 1px solid #607D8B;
-  display: inline-block;
-  height: 100vh;
-  overflow: scroll;
-  width: 50%;
-}
 
 .bookmark-banner-element {
   color: #455A64;
@@ -123,6 +53,8 @@ ul {
   border-bottom: 1px solid #CFD8DC;
   font-size: medium;
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid #CFD8DC;
   padding: 1.5rem 0;
 }
 
@@ -152,28 +84,104 @@ ul {
   text-decoration: underline #F2F4F4;
 }
 
-.read-button:hover {
-  color: #455A64;
+.bookmark-section {
+  background-color: #CFD8DC;
+  display: inline-block;
+  width: 50%;
+  border: 1px solid #607D8B;
+  overflow: scroll;
+  height: 100vh;
+}
+
+.clear-all-button {
+  border: none;
+  background-color: #FFC107;
+  color: #FFF;
+  font-size: 2.5rem;
   font-weight: 800;
-  text-decoration: underline #FFC107;
+  height: 4.5rem;
+  width: 77%;
+}
+.counter {
+  margin: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .delete-button:hover {
   text-decoration: underline #FFC107;
 }
 
+.full-wrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+.full-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.inputs {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 5rem;
+  height: 4.5rem;
+  width: 77%;
+}
+
+.inputs-button-wrapper {
+  background-color: #455A64;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  height: 100vh;
+}
+
+.inputs:invalid {
+  border: 2px dashed red;
+}
+
+.link-img {
+  width: 15%;
+}
+
+.make-bookmark-button {
+  border: none;
+  background-color: #FFC107;
+  color: #FFF;
+  font-size: 2.5rem;
+  font-weight: 800;
+  height: 4.5rem;
+  width: 77%;
+}
+
+.make-bookmark-button:hover {
+  background-color: #FFD773;
+  color: #FFF;
+}
+
 .read {
   background-color: #F2F4F4;
 }
 
-.read a {
-  border-bottom: 0.50rem solid #CFD8DC;
+.read-button:hover {
+  color: #455A64;
+  font-weight: 800;
+  text-decoration: underline #FFC107;
 }
 
-.read button {
+.read .read-button {
   color: #F05A28;
   font-weight: 800;
   text-decoration: none;
+}
+
+.title-inputs {
+  color: #FFF;
+  font-size: 5vw;
 }
 
 @media screen and (min-width: 1250px) {
@@ -191,7 +199,11 @@ ul {
     width: 100%;
   }
   .link-img {
+
+    width: 10%;
+  }
+  .title-inputs {
     padding-bottom: 1rem;
-    width: 7%;
+    font-size: 7vw;
   }
 }
