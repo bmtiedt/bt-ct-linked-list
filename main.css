@@ -62,9 +62,9 @@ body {
 
 ul {
   display: inline-flex;
-  list-style: none;
   color: #CFD8DC;
   line-height: 3rem;
+  list-style: none;
 }
 
 .counter {
@@ -125,7 +125,6 @@ a {
 .make-bookmark-button:hover {
   background-color: #FFD773;
   color: #FFF;
-}
 
 .bookmark-list-link-item:hover {
   color: #455A64;
@@ -184,8 +183,8 @@ a {
 }
 .read .read-button {
   color: #F05A28;
-  text-decoration: none;
   font-weight: 800;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 1250px) {
@@ -203,6 +202,7 @@ a {
     width: 100%;
   }
   .link-img {
+
     width: 10%;
   }
   .title-inputs {
