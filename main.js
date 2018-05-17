@@ -68,10 +68,10 @@
   
   
   function toggleButton () {
-    if ((inputTitle.value === '') || (inputUrl.value === '')) {
-      makeBookmarkButton.disabled = true;
-    } else {
+    if ((inputTitle.value !== '') || (inputUrl.value !== '')) {
       makeBookmarkButton.disabled = false;
+    } else {
+      makeBookmarkButton.disabled = true;
     }
   }
 
@@ -89,8 +89,9 @@
       clearInputs(inputTitle);
       clearInputs(inputUrl);
       disableButton(makeBookmarkButton);
-    }
-  }
+    } else 
+      alert('Please fill in both fields!');
+  };
 
 // function clearReadBookmarks(element) {
 //   var clearAllButton = document.createElement('article');
