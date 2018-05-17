@@ -35,12 +35,20 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
 a {
   text-decoration: none;
 }
 
+.full-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .full-wrapper {
   display: flex;
+  margin: 0 auto;
 }
 
 .inputs-button-wrapper {
@@ -59,12 +67,11 @@ a {
 
 .title-inputs {
   color: #FFF;
-  font-size: 6.5rem;
+  font-size: 5vw;
 }
 
 .link-img {
-  width: 9rem;
-  height: 5rem;
+  width: 15%;
 }
 
 .inputs {
@@ -76,6 +83,7 @@ a {
 }
 
 .make-bookmark-button {
+  border: none;
   background-color: #FFC107;
   color: #FFF;
   font-size: 2.5rem;
@@ -102,7 +110,8 @@ a {
   color: #455A64;
   border-bottom: 1px solid #CFD8DC;
   font-size: x-large;
-  margin: 1rem 1rem 0 1rem;
+  margin: 1.5rem 1.5rem 0 1.5rem;
+  padding-bottom: .5rem;
 
 }
 
@@ -122,38 +131,73 @@ a {
 .bookmark-list-link {
   color: #607D8B;
   font-size: medium;
-  margin: 1rem 1rem 1rem 1rem;
+  margin-left: 1.5rem;
   border-bottom: 1px solid #CFD8DC;
-  padding-bottom: .5rem;
+  padding: 1.5rem 0;
 }
 
-.bookmark-list-link:hover {
+.bookmark-list-link-item:hover {
   color: #455A64;
+  font-weight: 800;
   text-decoration: underline #FFC107;
 }
 
 .bookmark-list-link-item {
-  text-decoration: underline;
+  color: #607D8B;
+  font-size: large;
+  text-decoration: underline #F2F4F4;
 }
 
 .bookmark-list-buttons {
   display: flex;
   justify-content: space-between;
+  margin: .5rem 1.5rem .5rem 1.5rem;
 }
 
 .bookmark-list-button {
   background: none;
   border: none;
   color: #455A64;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  text-decoration: underline #455A64;
-/*  border: 2px solid lightblue;
-*/}
+  font-size: small;
+  text-decoration: underline #F2F4F4;
+}
 
 .read-button:hover {
   color: #455A64;
   font-weight: 800;
   text-decoration: underline #FFC107;
+}
+
+.delete-button:hover {
+  text-decoration: underline #FFC107;
+}
+
+.page-read {
+  background-color: #F2F4F4;
+}
+
+.page-read .read-button {
+  color: #F05A28;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media screen and (min-width: 1250px) {
+  .full-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .full-wrapper {
+    display: block;
+  }
+  .inputs-button-wrapper,
+  .bookmark-section {
+    width: 100%;
+  }
+  .link-img {
+    width: 7%;
+    padding-bottom: 1rem;
+  }
 }
